@@ -1,0 +1,28 @@
+//для классов в игре, чтобы было понятно что потом делать
+class square{
+	int x;
+	int y;
+}
+class maps{
+	square razmer;
+	float timer;
+}
+class character{
+	int hp;
+	float stamina;
+	item[] inventar';
+	float radius_vidimosti;
+	int speed;
+	//мб все ниже закинуть в один класс
+	? left_hand;
+	? right_hand;
+	? off_hand;
+	? body;
+	? head;
+}
+class item{
+	string image;
+	string opisanie;
+}
+
+RASCHODNIKI,ARMOR	наследуются от item
