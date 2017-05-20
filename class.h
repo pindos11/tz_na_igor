@@ -41,23 +41,47 @@ class map{
 	void init(const char* mapdata); //need to make char array with sector data and send to this
 									//made so, because this class is to be used both on server and client
 }
-//HAVENT CHANGED AFTER THIS
+
+class weapon{
+	bool ammo;//if weapon with ammunition true, otherwise false
+	std::string image;//path to image;
+	float range;
+	float damage;
+
+}
+class inventory_item{
+	std::string image;
+	std::string description;
+	int count;//amount
+	bool empty;
+	bool locked;
+public:
+	inventory_item(bool _locked=true,bool _empty=true,std::string _image="",std::string _description="",int _count=0)
+		:empty(_empty),locked(_locked),image(_image),description(_description),count(_count)
+		{};
+}
+
 class character{
-	int hp;
+	float hp;
 	float stamina;
-	item[] inventar';
-	float radius_vidimosti;
-	int speed;
+	inventory_item inventory[MAX_COUNT_INVENTORY];
+	float range_vision;
+	float speed;
 	//мб все ниже закинуть в один класс
 	? left_hand;
 	? right_hand;
 	? off_hand;
 	? body;
 	? head;
+public:
+	character(float _hp=100.,float _stamina=100.,const int inventory_count=10,float _range_vision=10.,float _speed=4.)
+		:hp(_hp),stamina(_stamina),range_vision(_range_vision),speed(_speed){
+			bool inventory_lock[inventory_count]={};
+			inventory_item inventory[MAX_COUNT_INVENTORY]={inventory_lock};
+	}
 }
-class item{
-	string image;
-	string opisanie;
-}
+
+
+//HAVENT CHANGED AFTER THIS
 
 RASCHODNIKI,ARMOR	наследуются от item
